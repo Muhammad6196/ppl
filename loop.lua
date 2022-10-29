@@ -120,9 +120,9 @@ function finity.new(isdark, gprojectName, thinProject)
 	local self2 = finityObject
 	local self = finity
 
-	if not finity.gs["RunService"]:IsStudio() and self.gs["CoreGui"]:FindFirstChild("FinityUI") then
+	if not finity.gs["RunService"]:IsStudio() and self.gs["CoreGui"]:FindFirstChild(gprojectName) then
 
-		self.gs["CoreGui"]:FindFirstChild("FinityUI"):Destroy()
+		self.gs["CoreGui"]:FindFirstChild(gprojectName):Destroy()
 	end
 
 	local theme = finity.theme
@@ -195,7 +195,7 @@ function finity.new(isdark, gprojectName, thinProject)
 	end)
 
 	self2.userinterface = self:Create("ScreenGui", {
-		Name = "FinityUI",
+		Name = gprojectName,
 		ZIndexBehavior = Enum.ZIndexBehavior.Global,
 		ResetOnSpawn = false,
 	})
